@@ -28,6 +28,30 @@ build-specific pieces no longer match the new game build.
 4. **Re-extract from your own install** rather than reusing old exports - names and paths may have moved.
 5. **Re-test each mod** and fix what broke.
 
+## Palworld 1.0: use the right UE4SS build
+
+A very common 1.0 problem: installing UE4SS/PalSchema causes a **Steam-ID mismatch bug** - you're forced
+into the character-creation screen, the game acts bricked, or mods simply never load. The cause is
+grabbing the **upstream or "dev" UE4SS build** instead of the Palworld-specific one.
+
+- **Fix:** use **Okaetsu's Palworld-specific UE4SS** (the `experimental-palworld` RE-UE4SS release), not
+  the dev/upstream version, and follow the PalSchema installation docs
+  ([okaetsu.github.io/PalSchema/docs/installation](https://okaetsu.github.io/PalSchema/docs/installation))
+  which pair the correct UE4SS + PalSchema. UE4SS goes in `Pal/Binaries/Win64`, PalSchema in the
+  `ue4ss` Mods folder.
+
+  > Source: **chazzvc** - [original message](https://discord.com/channels/881638083169230928/1204916830653775895/1526620189905518612)
+
+See [UE4SS](/frameworks/ue4ss/) and [PalSchema](/frameworks/palschema/).
+
+## Updating the Palworld Modding Kit for 1.0
+
+After the 1.0 update you do **not** have to rebuild your PMK project from scratch. The modding kit was
+updated for 1.0; you can **drag-and-drop the updated kit files into your existing project** rather than
+redoing setup. Follow the "Updating the Palworld Modding Kit" guide on the official wiki.
+
+> Source: **Okaetsu** - [original message](https://discord.com/channels/881638083169230928/1199881629095694427/1526242765015351377)
+
 ## Why PalCodex marks page versions
 
 Because this drift is constant, every page here carries a version badge (verified-1.0, needs-review, or

@@ -21,9 +21,14 @@ supports C++ mods, ships an object dumper, and provides an in-game console/log.
 
 ## Using it with Palworld
 
-- **UE4SS is rebuilt per game build.** Use a UE4SS build made for your Palworld version - an old or
-  mismatched build can fail to load or crash. For Palworld 1.0, use the current community build for
-  1.0.
+- **Use the Palworld-specific build, not upstream/dev UE4SS.** UE4SS is rebuilt per game build, and for
+  Palworld you want **Okaetsu's `experimental-palworld` RE-UE4SS release** paired with PalSchema.
+  Grabbing the generic dev/upstream build on 1.0 causes a Steam-ID mismatch bug (forced
+  character-creation screen, mods never load) - see
+  [Compatibility & updates](/troubleshooting/compatibility-and-updates/).
+- **Fix the usmap/Lua-types crash.** Generating a `.usmap` or Lua types from the console can crash on
+  UE 5.1 unless the correct `MemberVariableLayout.ini` is next to the UE4SS dll - see
+  [Common errors](/troubleshooting/common-errors/) and [Useful links](/reference/useful-links/).
 - **Lua mods declare UE4SS as a dependency.** A player needs UE4SS installed for your Lua mod to run.
 - **Don't double-load it.** Installing UE4SS two ways in the same game install (for example a
   Workshop copy plus a manual copy) causes a double-load crash. Pick one.

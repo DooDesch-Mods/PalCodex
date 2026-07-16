@@ -43,3 +43,38 @@ The failures that come up most, grouped by symptom.
 - Adding bones to a modded skeleton breaks other animations unless you fix the skeleton. Use the
   [custom-animation tool](/animations/custom-animations/), and for physics on custom bones see
   [Kawaii physics](/asset-modding/kawaii-physics/).
+
+## UE4SS crashes when generating a usmap or Lua types
+
+Generating a fresh `.usmap` or Lua type definitions from the UE4SS console crashes the game with a fatal
+error on the latest experimental UE4SS.
+
+- **Cause:** an incorrect member-variable layout for UE 5.1.
+- **Fix:** apply the corrected UE4SS config - place the correct `MemberVariableLayout.ini` (the 5.1
+  layout with the manual fixes) next to the UE4SS dll. With that in place, usmap / Lua-type generation no
+  longer crashes. A prebuilt one is in the community UsefulFiles repo (see
+  [Useful links](/reference/useful-links/)).
+
+  > Source: **Okaetsu** - [original message](https://discord.com/channels/881638083169230928/1107095001248301128/1522973388010684669)
+
+## Blueprint SaveGame variables don't persist
+
+Custom variables stored in a Blueprint `SaveGame` object (using a custom struct) don't survive
+save/load.
+
+- **Fix:** enable the **`SaveGame` property flag** on each variable/struct member you want persisted
+  (expand every value in the struct and tick `SaveGame`). Members without the flag are never written to
+  the save.
+
+  > Source: **Okaetsu** - [original message](https://discord.com/channels/881638083169230928/1107095001248301128/1527304896833916928)
+
+## PMK cook packs the whole content folder
+
+Cooking in the [Palworld Modding Kit](/frameworks/palworld-modding-kit/) packs the entire content folder
+instead of just the collection set on the `PrimaryAssetLabel`.
+
+- **Fix:** clear and re-set (re-tick) the asset collection on the `PrimaryAssetLabel`, run **Refresh
+  Redirectors**, and if it persists close and reopen the editor - Unreal's cached collection state
+  drifts from what it shows you.
+
+  > Source: **MCorgano** - [original message](https://discord.com/channels/881638083169230928/1199881629095694427/1526291725306564818)

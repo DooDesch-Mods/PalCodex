@@ -2,7 +2,7 @@
 title: Creating & Editing Recipes
 description: Find Palworld's recipe data, edit existing recipes, add new ones, and test them in game.
 sidebar:
-  order: 2
+  order: 3
 versionStatus: needs-review
 sourceDate: "2024-02-13"
 ---

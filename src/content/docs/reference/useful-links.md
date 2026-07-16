@@ -28,6 +28,22 @@ official modding wiki and the community Discord; PalCodex curates and organizes 
   [UE4SS](/frameworks/ue4ss/).
 - **[Audacity](https://www.audacityteam.org/)** - audio editing for [audio mods](/audio/).
 
+## Essential files & frameworks
+
+- **[PalworldModding/UsefulFiles](https://github.com/PalworldModding/UsefulFiles)** - prebuilt
+  `Mappings.usmap` (so you don't have to dump it yourself) and the `MemberVariableLayout.ini` that stops
+  UE4SS crashing when generating usmap / Lua types. See
+  [UE4SS crashes](/troubleshooting/common-errors/).
+
+  > Source: **Okaetsu** - [original message](https://discord.com/channels/881638083169230928/1199881629095694427/1527351369663643689)
+- **[PalSchema installation docs](https://okaetsu.github.io/PalSchema/docs/installation)** - the
+  authoritative install guide pairing the correct Palworld UE4SS + PalSchema. See
+  [PalSchema](/frameworks/palschema/).
+- **Mod Config Menu (UI)** ([Nexus mod 577](https://www.nexusmods.com/palworld/mods/577)) - a framework
+  that gives your mod JSON-backed config with an in-game settings UI, instead of rolling your own.
+
+  > Source: **Okaetsu** - [original message](https://discord.com/channels/881638083169230928/1107095001248301128/1527369991681216765)
+
 ## Community guide repositories
 
 - **[Reaper's Palworld_Modding_Guides](https://github.com/ReapersVigilance/Palworld_Modding_Guides)** -

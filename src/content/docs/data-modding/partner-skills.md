@@ -2,7 +2,7 @@
 title: Partner Skills
 description: Add or edit the partner skills of existing Pals, and change their skill names and descriptions.
 sidebar:
-  order: 3
+  order: 4
 versionStatus: needs-review
 sourceDate: "2026-03-10"
 ---

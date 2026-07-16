@@ -2,7 +2,7 @@
 title: DataTable Modding Without Unreal Engine
 description: Edit Palworld's DataTables directly with UAssetGUI - no Unreal Engine install - to change stats, drops, recipes and more.
 sidebar:
-  order: 1
+  order: 2
 versionStatus: needs-review
 sourceDate: "2024-12-09"
 ---

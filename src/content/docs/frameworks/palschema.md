@@ -38,6 +38,37 @@ When iterating on data mods, prefer a full game/mod restart over an in-place "re
 reloads with data frameworks can hang or crash. Restart cleanly when in doubt.
 :::
 
+## Common PalSchema gotchas
+
+Recurring PalSchema problems from the help channels, with the fixes:
+
+- **Swapping a Blueprint's skeletal mesh** (a weapon/tool model): setting `"SkeletalMesh": "/Game/..."`
+  directly errors that it wants a `SkeletalMeshComponent`, not a `SkeletalMesh`. Nest the property under
+  the component so the path sits inside a `SkeletalMesh` object, and **also set `SkinnedAsset`** to the
+  same value or the model won't actually change:
+
+  ```json
+  { "BP_PickaxeTier1_C": { "SkeletalMesh": { "SkeletalMesh": "/Game/Pal/Model/Weapon/Hammer/SK_Weapon_Hammer_001.SK_Weapon_Hammer_001" } } }
+  ```
+
+  > Source: **Okaetsu** - [original message](https://discord.com/channels/881638083169230928/1199881629095694427/1526242205470294166)
+
+- **"Property ActionMap was supplied an invalid class of /Game/Mods/.../BP_..._C"** (load stops on the
+  first Pal alphabetically): the JSON references a Blueprint class that isn't present because a required
+  **dependency pak is missing** - the companion pak that ships those `BP_*_C` classes. Install the
+  missing pak dependency and the classes resolve.
+
+  > Source: **Okaetsu** - [original message](https://discord.com/channels/881638083169230928/1107095001248301128/1527265029714350081)
+
+- **A custom Pal's partner skill shows only placeholder text and doesn't work:** you must also define
+  the skill in `DT_PartnerSkillParameter` - add a `TextReferencePassiveSkills` array (nested
+  `PassiveSkillIds` entries, one group per rank) for that Pal, placed in PalSchema's `raw` folder.
+  Without this the skill is broken, not just the text.
+
+  > Source: **Primarinabee** - [original message](https://discord.com/channels/881638083169230928/1107095001248301128/1527316622539231263)
+
+For where the relevant tables live, see [Key DataTables](/data-modding/key-datatables/).
+
 ## When to use it
 
 Use PalSchema when you're changing **data** - stats, items, recipes, drops, strings - and want a clean,

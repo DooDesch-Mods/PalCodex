@@ -40,6 +40,27 @@ current `.usmap`.
 
 For dedicated servers, generally **both** - see [Server modding](/dedicated-server/server-modding/).
 
+## I subscribed to a Steam Workshop mod but nothing happens.
+
+Palworld doesn't load mods by default. In the main menu open **Options → Mod Management**, tick the mod
+(plus any dependencies) and **Save**; you may also need to flip **Enable Mods** to ON. The game restarts
+and loads the enabled mods.
+
+> Source: a community member - [original message](https://discord.com/channels/881638083169230928/1204916830653775895/1451932900399382531)
+
+## FModel seems to have no option to load a local mappings file.
+
+It does - the option lives in FModel's **Settings**, under the game's mappings/directory configuration.
+Set the local mappings file path there and point it at your `Mappings.usmap`. See
+[Mappings](/tools-and-setup/mappings-usmap/).
+
+> Source: **Dude** - [original message](https://discord.com/channels/881638083169230928/1107095001248301128/1525154522895224843)
+
+## Which DataTable holds a Pal's skills / stats / icons?
+
+See [Key DataTables](/data-modding/key-datatables/) - a community-sourced map of where partner skills,
+base stats, recipes and icons live.
+
 ## A guide I found doesn't match the current game.
 
 Many guides date from early access. Check the page's version badge and read
