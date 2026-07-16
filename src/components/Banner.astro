@@ -8,8 +8,8 @@ const { entry } = Astro.locals.starlightRoute;
 const status = entry.data.versionStatus ?? 'verified-1.0';
 const sourceDate = entry.data.sourceDate;
 
-const base = import.meta.env.BASE_URL; // e.g. "/PalCodex/"
-const explainer = `${base}getting-started/modding-1-0-vs-early-access/`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // normalize: BASE_URL may or may not have a trailing slash
+const explainer = `${base}/getting-started/modding-1-0-vs-early-access/`;
 
 const messages = {
   'needs-review':
