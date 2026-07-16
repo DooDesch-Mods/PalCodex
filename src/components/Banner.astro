@@ -1,0 +1,33 @@
+---
+// Custom Starlight Banner override.
+// Renders the default frontmatter banner (if any), then an automatic
+// version-status callout whenever a page is not verified against Palworld 1.0.
+import Default from '@astrojs/starlight/components/Banner.astro';
+
+const { entry } = Astro.locals.starlightRoute;
+const status = entry.data.versionStatus ?? 'verified-1.0';
+const sourceDate = entry.data.sourceDate;
+
+const base = import.meta.env.BASE_URL; // e.g. "/PalCodex/"
+const explainer = `${base}getting-started/modding-1-0-vs-early-access/`;
+
+const messages = {
+  'needs-review':
+    'This page has not yet been re-verified against Palworld 1.0. Steps, paths and tool versions may need adjusting.',
+  'legacy-ea': `This content dates from Palworld early access${
+    sourceDate ? ` (${sourceDate})` : ''
+  } and may be outdated for 1.0.`,
+};
+const label = { 'needs-review': 'Needs review', 'legacy-ea': 'Legacy (early access)' };
+const msg = messages[status];
+---
+
+{entry.data.banner && <Default />}
+{
+  msg && (
+    <div class="version-banner" data-status={status}>
+      <strong>{label[status]}:</strong> {msg}{' '}
+      <a href={explainer}>Palworld 1.0 vs early access</a>.
+    </div>
+  )
+}

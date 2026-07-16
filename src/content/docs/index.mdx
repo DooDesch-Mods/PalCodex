@@ -1,0 +1,43 @@
+---
+title: PalCodex
+description: A community knowledge base for modding Palworld 1.0 - frameworks, tools, asset and data modding, Lua scripting, packaging and dedicated-server modding, curated from the Palworld Modding Community Discord.
+template: splash
+hero:
+  tagline: The community handbook for modding Palworld 1.0. Curated from the Palworld Modding Community Discord, with credit to every author.
+  actions:
+    - text: Get started
+      link: getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: Which framework should I use?
+      link: frameworks/
+      icon: open-book
+      variant: minimal
+    - text: View on GitHub
+      link: https://github.com/DooDesch-Mods/PalCodex
+      icon: github
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## What you'll find here
+
+Palworld modding know-how that used to live only in Discord threads - collected, deduplicated, categorized, and credited. Everything is curated **1.0-first**: pages verified against Palworld 1.0 are marked as such, and early-access-era content carries a clear "legacy" banner so you always know what you're reading.
+
+<CardGrid>
+  <LinkCard title="Getting Started" href="getting-started/" description="What Palworld modding is, the 1.0-vs-early-access lay of the land, installing the modding kit, and your first mod." />
+  <LinkCard title="API & Framework Mods" href="frameworks/" description="UE4SS, PalSchema, Unreal Shimloader, the Palworld Modding Kit and PalDefender - and when to use which." />
+  <LinkCard title="Tools & Setup" href="tools-and-setup/" description="FModel, UAssetGUI, repak/retoc, mappings (.usmap), and extracting game files." />
+  <LinkCard title="Asset, Model & Texture Modding" href="asset-modding/" description="Model swaps, texture swaps, kawaii physics, and the basics of cooked uassets." />
+  <LinkCard title="Data & DataTable Modding" href="data-modding/" description="Editing DataTables without Unreal, recipes, and partner skills." />
+  <LinkCard title="Lua Scripting" href="lua-scripting/" description="Scripting Palworld at runtime with UE4SS Lua." />
+  <LinkCard title="Packaging & Pak Pipeline" href="packaging/" description="repak pack/unpack, cooking, the _P suffix, load order and conflicts." />
+  <LinkCard title="Troubleshooting & FAQ" href="troubleshooting/" description="Common errors, compatibility after patches, and answers mined from the help channels." />
+</CardGrid>
+
+## Credit where it's due
+
+Every guide, snippet and resource here was shared by a member of the **Palworld Modding Community** Discord. Each page links back to the original Discord message and names its author. The full roster is on the [Contributors](/contributors/) page.
+
+If you authored something republished here and want the credit changed or the content removed, reach out at [support.doodesch.de](https://support.doodesch.de).

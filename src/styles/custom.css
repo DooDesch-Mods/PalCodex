@@ -1,0 +1,23 @@
+/* PalCodex custom styles */
+
+/* Automatic version-status banner (see src/components/Banner.astro). */
+.version-banner {
+  border: 1px solid var(--sl-color-orange);
+  border-radius: 0.5rem;
+  background: var(--sl-color-orange-low);
+  color: var(--sl-color-white);
+  padding: 0.6rem 0.85rem;
+  margin-block-end: 1.25rem;
+  font-size: var(--sl-text-sm);
+  line-height: 1.5;
+}
+
+.version-banner[data-status='legacy-ea'] {
+  border-color: var(--sl-color-red);
+  background: var(--sl-color-red-low);
+}
+
+.version-banner a {
+  color: inherit;
+  font-weight: 600;
+}
