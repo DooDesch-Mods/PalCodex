@@ -2,7 +2,7 @@
 
 The community handbook for modding [Palworld](https://store.steampowered.com/app/1623730/Palworld/) 1.0 - frameworks, tools, asset and data modding, Lua scripting, packaging and dedicated-server modding, curated from the **Palworld Modding Community** Discord.
 
-> 🛟 **Need help or found a bug?** Get support at [support.doodesch.de](https://support.doodesch.de).
+> 🛟 **Need help or found a bug?** Get support at [support.doodesch.de/palcodex](https://support.doodesch.de/palcodex).
 
 ## What this is
 
@@ -27,7 +27,7 @@ Pages live under `src/content/docs/`, organized by the sidebar categories in `as
 
 ## Contributing
 
-Found something to add, fix or correct? Open an issue or PR. If you authored a guide or snippet republished here and want the credit adjusted or the content removed, contact [support.doodesch.de](https://support.doodesch.de) and we will sort it out.
+Found something to add, fix or correct? Open an issue or PR. If you authored a guide or snippet republished here and want the credit adjusted or the content removed, contact [support.doodesch.de/palcodex](https://support.doodesch.de/palcodex) and we will sort it out.
 
 ## Credits & license
 
